@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Dotpe Merchant Panel Test Automation Test Suite">
+
+	
+
+
+	<test name="Dotpe Merchant Panel Test Cases">
+		<classes>
+			<class name="in.dotpe.merchant.tests.LoginTest"></class>
+			<class name="in.dotpe.merchant.tests.CreateCampaign"></class>
+
+		</classes>
+	</test>
+</suite>

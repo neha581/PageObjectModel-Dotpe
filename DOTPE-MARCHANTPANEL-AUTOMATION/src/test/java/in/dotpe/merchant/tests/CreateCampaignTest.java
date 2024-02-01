@@ -31,6 +31,7 @@ public class CreateCampaignTest extends Base{
 	public void validateCreateNewCampaign() {
 		campaignEnginePage.newWhatsAppCampaign();
 		campaignCreatePage.createCampaign();
+		campaignCreatePage.sendCampaign();
 	}
 	
 	@AfterMethod

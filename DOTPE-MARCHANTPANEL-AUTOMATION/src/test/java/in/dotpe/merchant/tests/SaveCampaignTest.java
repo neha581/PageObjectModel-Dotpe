@@ -28,6 +28,7 @@ public class SaveCampaignTest extends Base {
 	@Test 
 	public void validate_Saving_a_Campaign() {
 		campaignEnginePage.newWhatsAppCampaign();
+		campaignCreatePage.createCampaign();
 		campaignCreatePage.saveCampaign();
 	}
 

@@ -28,6 +28,7 @@ public class ScheduleCampaign extends Base {
 	@Test 
 	public void validate_Scheduling_a_Campaign() {
 		campaignEnginePage.newWhatsAppCampaign();
+		campaignCreatePage.createCampaign();
 		campaignCreatePage.scheduleCampaign();
 	}
 	

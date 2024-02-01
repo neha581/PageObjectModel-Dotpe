@@ -96,55 +96,39 @@ public class CampaignCreatePage extends Base{
 	}
 	
 	//define action available on campaign create page like send/save/schedule campaign/send Test msg
-	//1. send campaign
+	//1. create campaign
 	public CampaignEnginePage createCampaign() {
-		enterCampaignName.sendKeys("campaignName");
+	enterCampaignName.sendKeys("campaignName");
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("arguments[0].click();", nextBtnAfterCampaignName);
+	selectListDropdwown.click();
+	searchContactList.sendKeys("ns");
+	selectListfromDropdown.click();
+	listSelected.click();
+	js.executeScript("arguments[0].click();", nextBtnAfterListSelection);
+	searchTemplate.sendKeys("raksha_12");
+	selectTemplate.click();
+	js.executeScript("arguments[0].click();", nextBtnAfterTemplateSelection);
+	return new CampaignEnginePage();
+	}
+	
+	//2. send campaign
+	public CampaignEnginePage sendCampaign() {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-    	js.executeScript("arguments[0].click();", nextBtnAfterCampaignName);
-    	selectListDropdwown.click();
-		searchContactList.sendKeys("ns");
-		selectListfromDropdown.click();
-		listSelected.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterListSelection);
-		searchTemplate.sendKeys("raksha_12");
-		selectTemplate.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterTemplateSelection);
     	js.executeScript("arguments[0].click();", sendCampaign);
     	NewCampaignSentSuccessfully_Popup.click();
 		return new CampaignEnginePage();
 	}
-	//2. save campaign
+	//3. save campaign
 	public CampaignEnginePage saveCampaign() {
-        enterCampaignName.sendKeys("campaignName");
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-    	js.executeScript("arguments[0].click();", nextBtnAfterCampaignName); 
-    	selectListDropdwown.click();
-		searchContactList.sendKeys("ns");
-		selectListfromDropdown.click();
-		listSelected.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterListSelection);
-		searchTemplate.sendKeys("raksha_12");
-		selectTemplate.click();
-		JavascriptExecutor js2 = (JavascriptExecutor)driver;
-    	js2.executeScript("arguments[0].click();", nextBtnAfterTemplateSelection);
-    	js2.executeScript("arguments[0].click();", saveCampaign);
+    	js.executeScript("arguments[0].click();", saveCampaign);
     	NewCampaignSavedSuccessfully_Popup.click(); 
 		return new CampaignEnginePage();
 		
 	}
-	// 3. sending a test msg
+	// 4. sending a test msg
 	public CampaignEnginePage sendTestMsg() {
-        enterCampaignName.sendKeys("campaignName");
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-    	js.executeScript("arguments[0].click();", nextBtnAfterCampaignName); 
-    	selectListDropdwown.click();
-		searchContactList.sendKeys("ns");
-		selectListfromDropdown.click();
-		listSelected.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterListSelection);
-		searchTemplate.sendKeys("raksha_12");
-		selectTemplate.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterTemplateSelection);
     	Actions actions = new Actions(driver);
         actions.moveToElement(sendOptions).perform();
         actions.clickAndHold(sendOptions).perform();
@@ -155,19 +139,8 @@ public class CampaignCreatePage extends Base{
     	testmsgSentSuccessfully.click();
 		return new CampaignEnginePage();	
 	}
-	//4. scheduling a campaign
+	//5. scheduling a campaign
 	public CampaignEnginePage scheduleCampaign() {
-        enterCampaignName.sendKeys("campaignName");
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-    	js.executeScript("arguments[0].click();", nextBtnAfterCampaignName); 
-    	selectListDropdwown.click();
-		searchContactList.sendKeys("ns");
-		selectListfromDropdown.click();
-		listSelected.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterListSelection);
-		searchTemplate.sendKeys("raksha_12");
-		selectTemplate.click();
-    	js.executeScript("arguments[0].click();", nextBtnAfterTemplateSelection);
     	Actions actions = new Actions(driver);
         actions.moveToElement(sendOptions).perform();
         actions.clickAndHold(sendOptions).perform();

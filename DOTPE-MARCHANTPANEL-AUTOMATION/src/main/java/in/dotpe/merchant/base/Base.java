@@ -43,9 +43,9 @@ public static void initiatization() {
 
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
-//	driver.manage().timeouts().pageLoadTimeout(Util.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+    //driver.manage().timeouts().pageLoadTimeout(Util.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 	driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	
 	driver.get(prop.getProperty("url"));
 }

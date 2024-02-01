@@ -12,8 +12,8 @@ import org.openqa.selenium.WebElement;
 import in.dotpe.merchant.base.Base;
 
 public class Util extends Base{
-	public static long PAGE_LOAD_TIMEOUT = 80;
-	public static long IMPLICIT_WAIT = 40;
+	public static long PAGE_LOAD_TIMEOUT = 40;
+	public static long IMPLICIT_WAIT = 30;
 	public void switchToFrame() {
 		driver.switchTo().frame("mainpanel");
 	}

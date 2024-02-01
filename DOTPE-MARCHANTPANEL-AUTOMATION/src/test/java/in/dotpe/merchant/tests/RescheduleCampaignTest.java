@@ -1,6 +1,6 @@
 package in.dotpe.merchant.tests;
 
-import org.testng.annotations.AfterMethod;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,12 +10,12 @@ import in.dotpe.merchant.pages.CampaignEnginePage;
 import in.dotpe.merchant.pages.LoginPage;
 import in.dotpe.merchant.util.Util;
 
-public class DeleteCampaignTest extends Base{
+public class RescheduleCampaignTest extends Base{
 	LoginPage login;
 	CampaignEnginePage campaignEnginePage;
 	CampaignCreatePage campaignCreatePage;
 	Util util;
-	public DeleteCampaignTest() {
+	public RescheduleCampaignTest() {
 		super();
 	}
 	@BeforeMethod
@@ -25,14 +25,17 @@ public class DeleteCampaignTest extends Base{
 		login = new LoginPage();
 		campaignEnginePage = login.login(prop.getProperty("username"), prop.getProperty("password"));
 		campaignCreatePage = new CampaignCreatePage();
-	}
-	@Test 
-	public void validateDeleteCampaign() {
-		campaignEnginePage.deleteCampaignTest();
-	}
-	@AfterMethod
-	public void tearDown(){
-		driver.quit();
+		Actions actions = new Actions(driver);
 	}
 	
+	@Test 
+	public void validateRescheduleCampaign() {
+		
+		campaignEnginePage.rescheduleCampaignTest();
+	}
+	private void implicitly_wait(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

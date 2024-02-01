@@ -31,7 +31,9 @@ public class EditCampaignTest extends Base{
 	@Test 
 	public void validateEditCampaign() {
 		
-		//campaignCreatePage.editCampaignTest();
+		campaignEnginePage.editCampaignTest();
+		campaignCreatePage.createCampaign();
+		campaignCreatePage.saveCampaign();
 	}
 	private void implicitly_wait(int i) {
 		// TODO Auto-generated method stub

@@ -28,6 +28,7 @@ public class SendTestMsg extends Base{
 	@Test 
 	public void validate_Sending_a_Testmsg() {
 		campaignEnginePage.newWhatsAppCampaign();
+		campaignCreatePage.createCampaign();
 		campaignCreatePage.sendTestMsg();
 	}
 
